@@ -1,0 +1,24 @@
+{
+  "name": "template-minify-loader",
+  "version": "1.0.0",
+  "description": "Lodash template loader and minifier",
+  "keywords": [
+    "webpack-loader",
+    "template-loader",
+    "lodash-template"
+  ],
+  "bugs": {
+    "url": "https://github.com/autioch/template-minify-loader/issues"
+  },
+  "author": "autioch",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/autioch/template-minify-loader.git"
+  },
+  "//requiredDependencies": {
+    "lodash.template": "*",
+    "lodash": "*"
+  }
+}

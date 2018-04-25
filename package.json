@@ -1,6 +1,6 @@
 {
   "name": "template-minify-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lodash template loader and minifier",
   "keywords": [
     "webpack-loader",

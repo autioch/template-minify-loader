@@ -2,11 +2,13 @@
 
 Lodash template loader for webpack. Besides standard template creating, removes extra white spaces.
 
-`lodash` or `lodash.template` *must* be loaded.
+## Peer dependency
+
+`lodash` or `lodash.template` *must* be installed.
 
 ### Installation
 
-`npm install template-minify-loader`
+`npm i template-minify-loader`
 
 ### Usage
 
@@ -17,12 +19,22 @@ module.exports = {
     loaders: [
       {
         test: /\.tpl$/,
-        loader: 'template-minify-loader'
+        use: [{
+          loader:'template-minify-loader',
+          options: {
+            /* By default, loader will only compile the template.
+             * If `execute` is set to a truthy value, templates will be called with it.
+             * The results of this call will be returned instead of the template.
+             */
+            execute: false            
+          }
+        }]
       }
     ]
   },
 };
 ```
+
 
 #### Using compiled template
 

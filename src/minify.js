@@ -1,13 +1,16 @@
 /* List of strings that can be removed without changing the template. */
 const definitions = [{
   test: /(\t|\r\n|\r|\n) */gm,
-  result: ''
+  result: ' '
 }, {
   test: / +/gm,
   result: ' '
 }, {
   test: /<% %>/gm,
   result: ''
+}, {
+  test: /> </gm,
+  result: '><'
 }];
 
 /**
@@ -24,5 +27,5 @@ const replacer = (source, def) => source.replace(def.test, def.result);
  * @return {String}        Reduced text.
  */
 module.exports = function minify(source) {
-  return definitions.reduce(replacer, source);
+  return definitions.reduce(replacer, source.trim());
 };

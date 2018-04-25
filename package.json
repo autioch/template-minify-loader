@@ -10,6 +10,10 @@
   "bugs": {
     "url": "https://github.com/autioch/template-minify-loader/issues"
   },
+  "scripts": {
+    "test": "mocha --reporter=list spec/**/*.js",
+    "test:watch": "mocha --reporter=min --watch spec/**/*.js & exit 0"
+  },
   "author": "autioch",
   "license": "ISC",
   "main": "index.js",
@@ -20,5 +24,11 @@
   "//requiredDependencies": {
     "lodash.template": "*",
     "lodash": "*"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-qb": "^1.0.0",
+    "mocha": "^5.1.1"
   }
 }

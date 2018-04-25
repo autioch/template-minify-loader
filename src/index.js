@@ -15,5 +15,12 @@ const prefix = 'module.exports = ';
 module.exports = function tplCustomLoader(source) {
   this.cacheable();
 
-  return prefix + template(minify(source)).toString();
+  const compiledTemplate = template(minify(source));
+  const execute = this.options && this.options.execute;
+
+  if (execute) {
+    return compiledTemplate(execute);
+  }
+
+  return prefix + compiledTemplate.toString();
 };
